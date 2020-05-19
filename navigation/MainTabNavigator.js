@@ -6,7 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ModulesScreen from '../screens/ModulesScreen';
 import CoursesScreen from '../screens/CoursesScreen';
-import RegionsScreen from '../screens/RegionsScreen';
+//import RegionsScreen from '../screens/RegionsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import ResourcesScreen from '../screens/ResourcesScreen';
 import VideoPlaylist from '../screens/VideoPlaylist';
