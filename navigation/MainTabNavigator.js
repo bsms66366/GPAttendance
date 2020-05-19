@@ -9,6 +9,7 @@ import CoursesScreen from '../screens/CoursesScreen';
 import RegionsScreen from '../screens/RegionsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import ResourcesScreen from '../screens/ResourcesScreen';
+import VideoPlaylist from '../screens/VideoPlaylist';
 //import FeedbackScreen from '../screens/FeedbackScreen';
 
 const config = Platform.select({
@@ -89,7 +90,7 @@ SettingsStack.path = '';
 /*****************************************************feedback****/
 const GameStack = createStackNavigator(
   {
-    RegionsScreen: RegionsScreen,
+    VideoPlaylist: VideoPlaylist,
   },
   config
 );
