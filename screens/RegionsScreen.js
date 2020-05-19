@@ -34,7 +34,7 @@ export default function LinksScreen() {
         </View> 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://mediastream.brighton.ac.uk/Play/32410') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard20.png')} style ={styles.IconStyle} />  
+          <Image source={require('../assets/images/interfaceIcons_Artboard6.png')} style ={styles.IconStyle} />  
         <Button title="Back and Limbs" style={styles.titleText}/>
         </TouchableOpacity>
         </View> 
