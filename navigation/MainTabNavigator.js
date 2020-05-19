@@ -6,7 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ModulesScreen from '../screens/ModulesScreen';
 import CoursesScreen from '../screens/CoursesScreen';
-import videoStreams from '../screens/videoStreams';
+import RegionsScreen from '../screens/RegionsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import ResourcesScreen from '../screens/ResourcesScreen';
 //import FeedbackScreen from '../screens/FeedbackScreen';
@@ -89,7 +89,7 @@ SettingsStack.path = '';
 /*****************************************************feedback****/
 const GameStack = createStackNavigator(
   {
-    videoStreams: videoStreams,
+    RegionsScreen: RegionsScreen,
   },
   config
 );
