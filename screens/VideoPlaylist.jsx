@@ -607,6 +607,7 @@ _onPlaylistPressed = (uri) => {
             <Image style={styles.button} source={ICON_FORWARD_BUTTON.module} />
           </TouchableHighlight>
         </View>
+
         <View
           style={[
             styles.buttonsContainerBase,
@@ -635,20 +636,9 @@ _onPlaylistPressed = (uri) => {
               value={1}
               onValueChange={this._onVolumeSliderValueChange}
             />
-          </View>
-          {/*<TouchableHighlight
-            underlayColor={BACKGROUND_COLOR}
-            style={styles.wrapper}
-            onPress={this._onLoopPressed}
-          >
-            <Image
-              style={styles.button}
-              source={LOOPING_TYPE_ICONS[this.state.loopingType].module}
-            />
-          </TouchableHighlight>*/}
-           
-        </View>
+          </View> 
         <List playlist={PLAYLIST} onPress={(uri)=>this._onPlaylistPressed(uri)}/>
+        </View>
       </View>
     );
   }
@@ -729,7 +719,7 @@ const styles = StyleSheet.create({
     maxWidth: DEVICE_WIDTH / 2.0
   },
   buttonsContainerMiddleRow: {
-    maxHeight: ICON_MUTED_BUTTON.height,
+    //maxHeight: ICON_MUTED_BUTTON.height,
     alignSelf: "stretch",
     paddingRight: 20
   },
@@ -737,22 +727,17 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    minWidth: DEVICE_WIDTH / 2.0,
-    maxWidth: DEVICE_WIDTH / 2.0
+    paddingLeft: 10,
+    //marginRight: 25,
+    //justifyContent: "space-between",
+    minWidth: DEVICE_WIDTH / 4.0,
+    maxWidth: DEVICE_WIDTH / 4.0
   },
   volumeSlider: {
-    width: DEVICE_WIDTH / 2.0 - ICON_MUTED_BUTTON.width
+    width: DEVICE_WIDTH / 4.0 - ICON_MUTED_BUTTON.width
   },
-  buttonsContainerBottomRow: {
-    maxHeight: ICON_THUMB_1.height,
-    alignSelf: "stretch",
-    paddingRight: 20,
-    paddingLeft: 20
-  },
-  rateSlider: {
-    width: DEVICE_WIDTH / 2.0
-  },
+ 
+
   buttonsContainerTextRow: {
     maxHeight: FONT_SIZE,
     alignItems: "center",
@@ -765,7 +750,7 @@ const styles = StyleSheet.create({
   List:{
     alignItems: "center",
     paddingRight: 10,
-    paddingLeft: 20,
+    paddingLeft: 50,
     minWidth: DEVICE_WIDTH / 2.0,
     maxWidth: DEVICE_WIDTH / 2.0
   },
