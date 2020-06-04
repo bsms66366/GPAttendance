@@ -6,13 +6,18 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
+  TouchableOpacity,
   View
 } from "react-native";
 import { Asset } from "expo-asset";
+import Constants from 'expo-constants';
 import { Audio, Video } from "expo-av";
 import * as Font from "expo-font";
+import List from "../components/List";
+
 
 import { MaterialIcons } from "@expo/vector-icons";
+//import {FontAwesomeIcon} from 'expo-fontawesome';
 
 class Icon {
   constructor(module, width, height) {
@@ -30,60 +35,51 @@ class PlaylistItem {
     this.isVideo = isVideo;
   }
 }
-
 const PLAYLIST = [
+new PlaylistItem(
+    "Welcome to the BSMS Anatomy Department",
+    "https://firebasestorage.googleapis.com/v0/b/anatomyinterface.appspot.com/o/2_Anatomy%20at%20BSMS%20with%20Dr%20Claire%20Smith.mp4?alt=media&token=ae88c394-b068-4ca0-a104-433712c41563",
+    true
+  ),
   new PlaylistItem(
-    "Anatomy Dissection - “102 Dissection Video",
+    "Anatomy Dissection at BSMS",
+    "https://firebasestorage.googleapis.com/v0/b/anatomyinterface.appspot.com/o/Dissection%20BSMS.mp4?alt=media&token=3ef1f6f4-20ea-4254-a662-eb4d82865156",
+    true
+  ),
+  new PlaylistItem(
+    "102 Vodcast",
     "https://firebasestorage.googleapis.com/v0/b/anatomyinterface.appspot.com/o/102-Vodcast%201.mp4?alt=media&token=2c8c8357-b815-48d5-81e4-4378642a3b23",
     true
-  ),
-  new PlaylistItem(
-    "Coeliac trunk",
-    "https://mediastream.brighton.ac.uk/Play/33577",
-    true
-  ),
-  new PlaylistItem(
-    "Mildred Bailey – “All Of Me”",
-    "https://ia800304.us.archive.org/34/items/PaulWhitemanwithMildredBailey/PaulWhitemanwithMildredBailey-AllofMe.mp3",
-    false
-  ),
-  new PlaylistItem(
-    "Popeye - I don't scare",
-    "https://ia800501.us.archive.org/11/items/popeye_i_dont_scare/popeye_i_dont_scare_512kb.mp4",
-    true
-  ),
-  new PlaylistItem(
-    "Podington Bear - “Rubber Robot”",
-    "https://s3.amazonaws.com/exp-us-standard/audio/playlist-example/Podington_Bear_-_Rubber_Robot.mp3",
-    false
   )
+
 ];
+
 
 const ICON_THROUGH_EARPIECE = "speaker-phone";
 const ICON_THROUGH_SPEAKER = "speaker";
 
 const ICON_PLAY_BUTTON = new Icon(
-  require("../assets/videoIcons/play_button.png"),
+  require("../assets/videoIcons/play-outline.png"),
   34,
   51
 );
 const ICON_PAUSE_BUTTON = new Icon(
-  require("../assets/videoIcons/pause_button.png"),
+  require("../assets/videoIcons/pause.png"),
   34,
   51
 );
 const ICON_STOP_BUTTON = new Icon(
-  require("../assets/videoIcons/stop_button.png"),
+  require("../assets/videoIcons/stop-outline.png"),
   22,
   22
 );
 const ICON_FORWARD_BUTTON = new Icon(
-  require("../assets/videoIcons/forward_button.png"),
+  require("../assets/videoIcons/play-forward-outline.png"),
   33,
   25
 );
 const ICON_BACK_BUTTON = new Icon(
-  require("../assets/videoIcons/back_button.png"),
+  require("../assets/videoIcons/play-back-outline.png"),
   33,
   25
 );
@@ -100,26 +96,26 @@ const ICON_LOOP_ONE_BUTTON = new Icon(
 );
 
 const ICON_MUTED_BUTTON = new Icon(
-  require("../assets/videoIcons/muted_button.png"),
+  require("../assets/videoIcons/volume-mute-outline.png"),
   67,
   58
 );
 const ICON_UNMUTED_BUTTON = new Icon(
-  require("../assets/videoIcons/unmuted_button.png"),
+  require("../assets/videoIcons/volume-high-outline.png"),
   67,
   58
 );
 
-const ICON_TRACK_1 = new Icon(require("../assets/videoIcons/track_1.png"), 166, 5);
-const ICON_THUMB_1 = new Icon(require("../assets/videoIcons/thumb_1.png"), 18, 19);
-const ICON_THUMB_2 = new Icon(require("../assets/videoIcons/thumb_2.png"), 15, 19);
+const ICON_TRACK_1 = new Icon(require("../assets/videoIcons/track.png"), 166, 5);
+const ICON_THUMB_1 = new Icon(require("../assets/videoIcons/ellipse-sharp.png"), 18, 19);
+const ICON_THUMB_2 = new Icon(require("../assets/videoIcons/ellipse-sharp.png"), 15, 19);
 
 const LOOPING_TYPE_ALL = 0;
 const LOOPING_TYPE_ONE = 1;
 const LOOPING_TYPE_ICONS = { 0: ICON_LOOP_ALL_BUTTON, 1: ICON_LOOP_ONE_BUTTON };
 
 const { width: DEVICE_WIDTH, height: DEVICE_HEIGHT } = Dimensions.get("window");
-const BACKGROUND_COLOR = "#FFF8ED";
+const BACKGROUND_COLOR = "#282828";
 const DISABLED_OPACITY = 0.5;
 const FONT_SIZE = 14;
 const LOADING_STRING = "... loading ...";
@@ -152,7 +148,7 @@ export default class App extends React.Component {
       videoWidth: DEVICE_WIDTH,
       videoHeight: VIDEO_CONTAINER_HEIGHT,
       poster: false,
-      useNativeControls: false,
+      useNativeControls: true,
       fullscreen: false,
       throughEarpiece: false
     };
@@ -449,7 +445,6 @@ export default class App extends React.Component {
   _onPosterPressed = () => {
     this.setState({ poster: !this.state.poster });
   };
-
   _onUseNativeControlsPressed = () => {
     this.setState({ useNativeControls: !this.state.useNativeControls });
   };
@@ -486,7 +481,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <View />
         <View style={styles.nameContainer}>
-          <Text style={[styles.text, { fontFamily: "cutive-mono-regular" }]}>
+          <Text style={[styles.text, { color: '#bcba40',fontFamily: "cutive-mono-regular" }]}>
             {this.state.playbackInstanceName}
           </Text>
         </View>
@@ -534,7 +529,8 @@ export default class App extends React.Component {
               style={[
                 styles.text,
                 styles.buffering,
-                { fontFamily: "cutive-mono-regular" }
+                { color: '#bcba40', fontFamily: "cutive-mono-regular" }
+                
               ]}
             >
               {this.state.isBuffering ? BUFFERING_STRING : ""}
@@ -543,7 +539,7 @@ export default class App extends React.Component {
               style={[
                 styles.text,
                 styles.timestamp,
-                { fontFamily: "cutive-mono-regular" }
+                { color: '#bcba40',fontFamily: "cutive-mono-regular" }
               ]}
             >
               {this._getTimestamp()}
@@ -628,7 +624,7 @@ export default class App extends React.Component {
               onValueChange={this._onVolumeSliderValueChange}
             />
           </View>
-          <TouchableHighlight
+          {/*<TouchableHighlight
             underlayColor={BACKGROUND_COLOR}
             style={styles.wrapper}
             onPress={this._onLoopPressed}
@@ -637,8 +633,10 @@ export default class App extends React.Component {
               style={styles.button}
               source={LOOPING_TYPE_ICONS[this.state.loopingType].module}
             />
-          </TouchableHighlight>
+          </TouchableHighlight>*/}
+           
         </View>
+        <List />
         <View
           style={[
             styles.buttonsContainerBase,
@@ -652,11 +650,12 @@ export default class App extends React.Component {
           >
             <View style={styles.button}>
               <Text
-                style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                style={[styles.text, { color: '#bcba40',fontFamily: "cutive-mono-regular" }]}
               >
                 Rate:
               </Text>
             </View>
+
           </TouchableHighlight>
           <Slider
             style={styles.rateSlider}
@@ -665,6 +664,7 @@ export default class App extends React.Component {
             value={this.state.rate / RATE_SCALE}
             onSlidingComplete={this._onRateSliderSlidingComplete}
           />
+
           <TouchableHighlight
             underlayColor={BACKGROUND_COLOR}
             style={styles.wrapper}
@@ -672,12 +672,13 @@ export default class App extends React.Component {
           >
             <View style={styles.button}>
               <Text
-                style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                style={[styles.text,  { color: '#bcba40',fontFamily: "cutive-mono-regular" }]}
               >
                 PC: {this.state.shouldCorrectPitch ? "yes" : "no"}
               </Text>
             </View>
           </TouchableHighlight>
+         
           <TouchableHighlight
             onPress={this._onSpeakerPressed}
             underlayColor={BACKGROUND_COLOR}
@@ -689,7 +690,7 @@ export default class App extends React.Component {
                   : ICON_THROUGH_SPEAKER
               }
               size={32}
-              color="black"
+              color="#bcba40"
             />
           </TouchableHighlight>
         </View>
@@ -710,9 +711,9 @@ export default class App extends React.Component {
               >
                 <View style={styles.button}>
                   <Text
-                    style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                    style={[styles.text, { color: '#bcba40',fontFamily: "cutive-mono-regular" }]}
                   >
-                    Poster: {this.state.poster ? "yes" : "no"}
+                    {/*Poster: {this.state.poster ? "yes" : "no"}*/}
                   </Text>
                 </View>
               </TouchableHighlight>
@@ -724,7 +725,7 @@ export default class App extends React.Component {
               >
                 <View style={styles.button}>
                   <Text
-                    style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                    style={[styles.text, { color: '#bcba40',fontFamily: "cutive-mono-regular" }]}
                   >
                     Fullscreen
                   </Text>
@@ -747,7 +748,7 @@ export default class App extends React.Component {
               >
                 <View style={styles.button}>
                   <Text
-                    style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                    style={[styles.text, { color: '#bcba40',fontFamily: "cutive-mono-regular" }]}
                   >
                     Native Controls:{" "}
                     {this.state.useNativeControls ? "yes" : "no"}
@@ -797,6 +798,7 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     minHeight: ICON_THUMB_1.height * 2.0,
     maxHeight: ICON_THUMB_1.height * 2.0
+    
   },
   playbackSlider: {
     alignSelf: "stretch"
@@ -812,6 +814,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: FONT_SIZE,
     minHeight: FONT_SIZE
+    
   },
   buffering: {
     textAlign: "left",
@@ -867,5 +870,13 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     minWidth: DEVICE_WIDTH,
     maxWidth: DEVICE_WIDTH
-  }
+  },
+  
+  List:{
+    alignItems: "center",
+    paddingRight: 10,
+    paddingLeft: 20,
+    minWidth: DEVICE_WIDTH / 2.0,
+    maxWidth: DEVICE_WIDTH / 2.0
+  },
 });
