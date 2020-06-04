@@ -296,6 +296,11 @@ export default class App extends React.Component {
     );
   };
 
+ _setIndex(index) {
+    this.index = index
+      
+  }
+
   _advanceIndex(forward) {
     this.index =
       (this.index + (forward ? 1 : PLAYLIST.length - 1)) % PLAYLIST.length;
@@ -325,6 +330,13 @@ export default class App extends React.Component {
   _onStopPressed = () => {
     if (this.playbackInstance != null) {
       this.playbackInstance.stopAsync();
+    }
+  };
+
+_onPlaylistPressed = (uri) => {
+    if (this.playbackInstance != null) {
+      this._setIndex(PLAYLIST.findIndex((item)=> item.uri === uri));
+      this._updatePlaybackInstanceForIndex(this.state.shouldPlay);
     }
   };
 
@@ -636,7 +648,7 @@ export default class App extends React.Component {
           </TouchableHighlight>*/}
            
         </View>
-        <List />
+        <List playlist={PLAYLIST} onPress={(uri)=>this._onPlaylistPressed(uri)}/>
         <View
           style={[
             styles.buttonsContainerBase,

@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 
-const PLAYLIST = [
+/*const PLAYLIST = [
 {
     id: 'ae88c394-b068-4ca0-a104-433712c41563',
     title: 'Welcome to the BSMS Anatomy Department',
@@ -20,25 +20,26 @@ const PLAYLIST = [
   },
  
 ];
+*/
 
-
-function Item({ title }) {
+function Item({ item, onPress }) {
   return (
     <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
-      {/*<Text style={styles.url}>{url}</Text>*/}
+    <TouchableOpacity onPress={() => onPress(item.uri)}>
+      <Text style={styles.title}>{item.name}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
-export default function List() {
+export default function List(props) {
+  const {playlist, onPress} = props
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={PLAYLIST}
-        renderItem={({ item }) => <Item title={item.title} />}
-        keyExtractor={item => item.id}/>   
-     <TouchableOpacity onPress={() => this._onPress(item.title)} />
+        data={ playlist }
+        renderItem={({ item }) => <Item item={item} onPress={onPress} />}
+        keyExtractor={item => item.uri}/>   
     </SafeAreaView>
    
   );
