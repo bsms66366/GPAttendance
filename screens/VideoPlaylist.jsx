@@ -47,8 +47,18 @@ new PlaylistItem(
     true
   ),
   new PlaylistItem(
-    "102 Vodcast",
-    "https://firebasestorage.googleapis.com/v0/b/anatomyinterface.appspot.com/o/102-Vodcast%201.mp4?alt=media&token=2c8c8357-b815-48d5-81e4-4378642a3b23",
+    "360 OX Heart",
+    "https://firebasestorage.googleapis.com/v0/b/anatomyinterface.appspot.com/o/OX%20heart%20tutorial%202.mp4?alt=media&token=15863999-ef31-4e1c-800f-9f9cf0467679",
+    true
+  ),
+  new PlaylistItem(
+    "PA Promo",
+    "https://firebasestorage.googleapis.com/v0/b/anatomyinterface.appspot.com/o/PA%20Promo.mp4?alt=media&token=4a8599c5-1a04-479d-8e29-8cc07c3c40cb",
+    true
+  ),
+  new PlaylistItem(
+    "Student Central Announcement",
+    "https://firebasestorage.googleapis.com/v0/b/anatomyinterface.appspot.com/o/Student%20Central%20Announcement.mp4?alt=media&token=f9a3d9e3-b5d1-440a-b863-8e56cbad9627",
     true
   )
 
@@ -748,6 +758,7 @@ const styles = StyleSheet.create({
   },
   
   List:{
+    marginTop: 25,
     alignItems: "center",
     paddingRight: 10,
     paddingLeft: 50,
