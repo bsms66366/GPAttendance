@@ -1,0 +1,20 @@
+[
+{"type":"header","version":"4.8.3","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"Anatomy"},
+{"type":"table","name":"disectVideos","database":"Anatomy","data":
+[
+{"id":"1","video":"Brachial Plexus","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31880"},
+{"id":"10","video":"Anterior forearm","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31930"},
+{"id":"11","video":"Anterior Leg","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31929"},
+{"id":"12","video":"Anterior Thigh","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31937"},
+{"id":"2","video":"Posterior Abdominal Wall","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31871"},
+{"id":"3","video":"The Urinary Tract","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31867"},
+{"id":"4","video":"Liver, Biliary Tree and Spleen","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31863"},
+{"id":"5","video":"Gut and Related Mesenteries","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31818"},
+{"id":"6","video":"Gluteal region and posterior thigh","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31940"},
+{"id":"7","video":"Posterior forearm","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31939"},
+{"id":"8","video":"The Hand","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31931"},
+{"id":"9","video":"Posterior Leg","urlPath":"https:\/\/mediastream.brighton.ac.uk\/Play\/31928"}
+]
+}
+]
