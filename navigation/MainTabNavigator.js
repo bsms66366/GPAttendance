@@ -6,7 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ModulesScreen from '../screens/ModulesScreen';
 import CoursesScreen from '../screens/CoursesScreen';
-import CourseNavigator from '../navigation/courseNavigator';
+//import CoursesNavigator from '../navigation/CoursesNavigator';
 
 //import RegionsScreen from '../screens/RegionsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
@@ -47,7 +47,7 @@ HomeStack.path = '';
 /*****************************************************Courses****/
 const LinksStack = createStackNavigator(
   {
-    CoursesScreen: CoursesNavigator,
+    CoursesScreen: CoursesScreen,
   },
   config
 );
@@ -70,9 +70,9 @@ const ModuleStack = createStackNavigator(
 );
 
 ModuleStack.navigationOptions = {
-  tabBarLabel: 'Modules',
+  tabBarLabel: 'Phase 1',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-business' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-school' : 'md-link'} />
   ),
 };
 /*****************************************************Resources ****/

@@ -19,8 +19,7 @@ import ModulesScreen from '../screens/ModulesScreen';
       <View style={{flex: 1, flexDirection: 'row', flexWrap:1}}>
       
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity>
-          {/*<TouchableOpacity onPress = {() => _this.props.navigation({navigate})('ModulesScreen') }>*/}
+          <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/modulepage/view?course_id=_112236_1&cmp_tab_id=_298705_1&editMode=true&mode=cpview') }>
             <Image source={require('../assets/images/interfaceIcons_Artboard1.png')} style ={styles.IconStyle} /> 
                 <Button title="Phase 1" style={styles.titleText}/>
           </TouchableOpacity>
