@@ -33,9 +33,9 @@ export default function LinksScreen() {
         </TouchableOpacity>
         </View> 
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/VideoStreams.html') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard11.png')} style ={styles.IconStyle} />  
-        <Button title="Dissection Videos" style={styles.titleText}/>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://nearpod.com') }>
+          <Image source={require('../assets/images/interfaceIcons_Artboard12.png')} style ={styles.IconStyle} />  
+        <Button title="Presentations" style={styles.titleText}/>
         </TouchableOpacity>
         </View> 
        </View>

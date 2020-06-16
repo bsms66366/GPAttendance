@@ -3,14 +3,16 @@ import * as WebBrowser from 'expo-web-browser';
 import {
   Dimensions,
   Image,
-  Slider,
-  StyleSheet,
+  //Slider,
   Text,
-  TouchableHighlight,
+  StyleSheet,
   TouchableOpacity,
   View,
   SafeAreaView,
   FlatList,
+  ActivityIndicator, 
+  Alert,
+  TextInput
  
   //VirtualizedList
 } from "react-native";
@@ -20,13 +22,32 @@ import { Audio, Video } from "expo-av";
 import * as Font from "expo-font";
 //import List from "../components/List2";
 import { MaterialIcons } from "@expo/vector-icons";
+//import SearchBar from 'react-native-searchbar';
 
 const DATA = require("../data/videos.json");
 
 //console.log(DATA)
 export default function App() {
   return (
+    /* searchData(text) ,
+      const newData = this.arrayholder.filter(item => {
+        const itemData = item.name.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1
+      });
+   
+      this.setState({
+        data: newData,
+        text: text
+        })
+    } */
     <SafeAreaView style={styles.container}>
+      {/* <TextInput 
+         style={styles.textInput}
+         onChangeText={(text) => this.searchData(text)}
+         value={this.state.text}
+         underlineColorAndroid='transparent'
+         placeholder="Search Here" /> */}
       <FlatList
         data={DATA.video.video}
         renderItem={({ item }) => (
@@ -49,7 +70,7 @@ const styles = StyleSheet.create({
     marginTop: Constants.statusBarHeight,
   },
   item: {
-    backgroundColor: '#f9c2ff',
+    backgroundColor: '#bcba3e',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
