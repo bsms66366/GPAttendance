@@ -4,7 +4,7 @@ import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
+import Login from './screens/LoginScreen'
 import AppNavigator from './navigation/AppNavigator';
 
 export default function App(props) {
@@ -52,7 +52,10 @@ function handleLoadingError(error) {
 
 function handleFinishLoading(setLoadingComplete) {
   setLoadingComplete(true);
+  // return <Signup />
 }
+
+  
 
 const styles = StyleSheet.create({
   container: {

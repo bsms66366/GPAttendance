@@ -10,7 +10,22 @@ import {
   View,
 } from 'react-native';
 
+import { Container, Item, Form, Input, Button, Label } from "native-base";
+import * as firebase from "firebase";
 import { MonoText } from '../components/StyledText';
+
+firebaseConfig = {
+  apiKey: "AIzaSyDdKrXwNDWZ9Q9F3z35ude-B3a6KRZvVI8",
+  authDomain: "bsms-logbook.firebaseapp.com",
+  databaseURL: "https://bsms-logbook.firebaseio.com",
+  projectId: "bsms-logbook",
+  storageBucket: "bsms-logbook.appspot.com",
+  messagingSenderId: "202139360189",
+  appId: "1:202139360189:web:31b80e0cd7c218f9e9d0d4",
+  measurementId: "G-L1VX79JXVC"
+};
+
+//firebase.initializeApp(firebaseConfig);
 
 export default function HomeScreen() {
   return (
@@ -30,6 +45,16 @@ export default function HomeScreen() {
           />
 <Text style={styles.getStartedText}>Wecome to the BSMS Anatomy Labs Interface</Text>
 <Text style={styles.getStartedText}>The dissection table companion</Text>
+
+
+
+
+
+
+
+<Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
+        Login
+      </Text>
         </View>
 
         <View style={styles.getStartedContainer}>

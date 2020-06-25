@@ -8,11 +8,14 @@ import ModulesScreen from '../screens/ModulesScreen';
 import CoursesScreen from '../screens/CoursesScreen';
 //import CoursesNavigator from '../navigation/CoursesNavigator';
 
-//import RegionsScreen from '../screens/RegionsScreen';
+//import informationScreen from '../screens/informationScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import ResourcesScreen from '../screens/ResourcesScreen';
 import QuizzesScreen from '../screens/QuizzesScreen';
 import VideoScreen from '../screens/VideoScreen';
+import StudentLogin from '../screens/StudentLogin';
+//import NotesScreen from '../screens/NotesScreen';
+//import LoginScreen from "../screens/LoginScreen";
 //import List from '.components/List';
 //import VideoPlaylist from '../screens/VideoPlaylist';
 //import FeedbackScreen from '../screens/FeedbackScreen';
@@ -47,7 +50,7 @@ HomeStack.path = '';
 /*****************************************************Courses****/
 const LinksStack = createStackNavigator(
   {
-    CoursesScreen: CoursesScreen,
+    CourseScreen: CoursesScreen,
   },
   config
 );
