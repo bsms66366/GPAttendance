@@ -7,15 +7,17 @@ import HomeScreen from '../screens/HomeScreen';
 import ModulesScreen from '../screens/ModulesScreen';
 import CoursesScreen from '../screens/CoursesScreen';
 //import CoursesNavigator from '../navigation/CoursesNavigator';
-
-//import informationScreen from '../screens/informationScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import RegionsScreen from '../screens/RegionsScreen';
+import informationScreen from '../screens/informationScreen';
 import ResourcesScreen from '../screens/ResourcesScreen';
 import QuizzesScreen from '../screens/QuizzesScreen';
 import VideoScreen from '../screens/VideoScreen';
-import StudentLogin from '../screens/StudentLogin';
+import pagesNav from '../screens/pagesNav';
+//import DropdownsScreen from '../screens/DropdownsScreen';
+//import StudentLogin from '../screens/StudentLogin';
 //import NotesScreen from '../screens/NotesScreen';
 //import LoginScreen from "../screens/LoginScreen";
+//import PhoneLogin from "../screens/PhoneLogin";
 //import List from '.components/List';
 //import VideoPlaylist from '../screens/VideoPlaylist';
 //import FeedbackScreen from '../screens/FeedbackScreen';
@@ -98,7 +100,7 @@ SessionsStack.path = '';
 /*****************************************************path pots****/
 const SettingsStack = createStackNavigator(
   {
-    VideoScreen: VideoScreen,
+    pagesNav: pagesNav,
   },
   config
 );

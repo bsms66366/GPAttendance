@@ -1,0 +1,38 @@
+{
+	"video": {
+		"video": [
+			{
+				"title": "Back revision",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/33370"
+			},
+			{
+				"title": "Gluteal region and posterior thigh",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/31940"
+			},
+			{
+				"title": "Posterior forearm",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/31939"
+			},
+			{
+				"title": "The Hand",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/31931"
+			},
+			{
+				"title": "Posterior Leg",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/31928"
+			},
+			{
+				"title": "Anterior forearm",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/31930"
+			},
+			{
+				"title": "Anterior Leg",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/31929"
+			},
+			{
+				"title": "Anterior Thigh",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/31937"
+			}
+		]
+	}
+}

@@ -32,7 +32,7 @@ export default function HomeScreen() {
 <Text style={styles.getStartedText}>The dissection table companion</Text>
 
 <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Login
+       
       </Text>
         </View>
 
