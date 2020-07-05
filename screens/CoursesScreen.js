@@ -107,7 +107,7 @@ IconStyle:{
 
 BoxBorder: (height, width) => ({
     marginTop: 40,
-    width: (width /4)-14, 
+    width: (width /4)-18, 
     height: '40%',
     borderColor: '#bcba40',
     borderStyle:'dotted',

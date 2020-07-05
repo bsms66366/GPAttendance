@@ -13,6 +13,8 @@ import {
 import { Container, Item, Form, Input, Button, Label } from "native-base";
 import * as firebase from "firebase";
 import { MonoText } from '../components/StyledText';
+//import Question from '../components/Question';
+//import FAQScreen from '../screens/FAQScreen';
 
 firebaseConfig = {
   apiKey: "AIzaSyDdKrXwNDWZ9Q9F3z35ude-B3a6KRZvVI8",
@@ -44,7 +46,7 @@ export default function HomeScreen() {
             style={styles.welcomeImage}
           />
 <Text style={styles.getStartedText}>Wecome to the BSMS Anatomy Labs Interface</Text>
-<Text style={styles.getStartedText}>The dissection table companion</Text>
+<Text style={styles.getStartedText}>the dissection table companion</Text>
 
 
 
@@ -53,7 +55,7 @@ export default function HomeScreen() {
 
 
 <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Login
+       FAQ
       </Text>
         </View>
 
@@ -83,13 +85,13 @@ function DevelopmentModeNotice() {
   if (__DEV__) {
     const learnMoreButton = (
       <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Learn more
+        FAQ
       </Text>
     );
 
     return (
       <Text style={styles.developmentModeText}>
-     
+    
       </Text>
     );
   } else {
@@ -102,9 +104,7 @@ function DevelopmentModeNotice() {
 }
 
 function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync(
-    'https://docs.expo.io/versions/latest/workflow/development-mode/'
-  );
+  WebBrowser.openBrowserAsync({FAQScreen});
 }
 
 function handleHelpPress() {
@@ -198,6 +198,6 @@ const styles = StyleSheet.create({
   },
   helpLinkText: {
     fontSize: 14,
-    color: '#bcba3e',
+    color: '#BABABA',
   },
 });

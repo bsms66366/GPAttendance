@@ -30,7 +30,7 @@ export default createAppContainer(
   if (!user)
     return (
       <View style={s.root}>
-        <Login />
+       
       </View>
     );
 
@@ -54,8 +54,8 @@ const s = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
   },
-}); */
-    
+}); 
+    */
     Main: MainTabNavigator,
   })
 );

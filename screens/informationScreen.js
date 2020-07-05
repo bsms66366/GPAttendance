@@ -29,7 +29,7 @@ export default function HomeScreen() {
             style={styles.welcomeImage}
           />
 <Text style={styles.getStartedText}>Wecome to the BSMS Anatomy Labs Interface</Text>
-<Text style={styles.getStartedText}>The dissection table companion</Text>
+<Text style={styles.getStartedText}>the dissection table companion</Text>
 
 <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
        

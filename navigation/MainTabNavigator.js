@@ -12,7 +12,9 @@ import informationScreen from '../screens/informationScreen';
 import ResourcesScreen from '../screens/ResourcesScreen';
 import QuizzesScreen from '../screens/QuizzesScreen';
 import VideoScreen from '../screens/VideoScreen';
-import pagesNav from '../screens/pagesNav';
+import PagesNav from '../screens/PagesNav';
+//import FAQScreen from '../screens/FAQScreen';
+
 //import DropdownsScreen from '../screens/DropdownsScreen';
 //import StudentLogin from '../screens/StudentLogin';
 //import NotesScreen from '../screens/NotesScreen';
@@ -100,15 +102,15 @@ SessionsStack.path = '';
 /*****************************************************path pots****/
 const SettingsStack = createStackNavigator(
   {
-    pagesNav: pagesNav,
+    QuizzesScreen: QuizzesScreen,
   },
   config
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Videos',
+  tabBarLabel: 'Quizzes',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-videocam' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-trophy' : 'md-link'} />
   ),
 };
 
@@ -116,15 +118,15 @@ SettingsStack.path = '';
 /*****************************************************feedback****/
 const GameStack = createStackNavigator(
   {
-    QuizzesScreen: QuizzesScreen,
+    PagesNav: PagesNav
   },
   config
 );
 
 GameStack.navigationOptions = {
-  tabBarLabel: 'Quizzes',
+  tabBarLabel: 'Video',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-trophy' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-videocam' : 'md-link'} />
   ),
 };
 
