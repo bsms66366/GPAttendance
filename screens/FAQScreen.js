@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { Constants, WebBrowser } from 'expo';
+//import { Constants, WebBrowser } from 'expo';
+import Constants from 'expo-constants';
+import * as WebBrowser from 'expo-web-browser';
 import { FAQ, Question } from '../components/Question'
 
 // define some bullets

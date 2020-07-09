@@ -15,13 +15,13 @@ export default function LinksScreen() {
       <View style={{flex: 1, flexDirection: 'column', flexWrap:1}}>
 
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/sessionpage.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/sessionpage.php') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard8.png')} style ={styles.IconStyle} />  
         <Button title="Session Notes" style={styles.titleText}/>
         </TouchableOpacity>
         </View> 
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/pathpage.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/pathpage.php') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard9.png')} style ={styles.IconStyle} />  
         <Button title="Path Pots" style={styles.titleText}/>
         </TouchableOpacity>

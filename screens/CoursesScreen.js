@@ -35,7 +35,7 @@ import ModulesScreen from '../screens/ModulesScreen';
           </View>
 
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/papage.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/papage.php') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard23.png')} style ={styles.IconStyle} />
             <Button title="Pharmacy" style={styles.titleText}/>
         </TouchableOpacity>
@@ -43,7 +43,7 @@ import ModulesScreen from '../screens/ModulesScreen';
 
 
          <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/postGrad.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/postGrad.php') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard22.png')} style ={styles.IconStyle} />
             <Button title="neuroscience" style={styles.titleText}/>
         </TouchableOpacity>
@@ -57,21 +57,21 @@ import ModulesScreen from '../screens/ModulesScreen';
         </View>
 
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/postGrad.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/postGrad.php') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard22.png')} style ={styles.IconStyle} />
             <Button title="MSC Radiology" style={styles.titleText}/>
         </TouchableOpacity>
         </View>
 
       <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/postGrad.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/postGrad.php') }>
           <Image source={require('../assets/images/UoB3.png')} style ={styles.IconStyle} />
             <Button title="All Health Professions" style={styles.titleText}/>
         </TouchableOpacity>
         </View>
 
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/postGrad.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/postGrad.php') }>
           <Image source={require('../assets/images/UoB3.png')} style ={styles.IconStyle} />
             <Button title="Physiotherapy" style={styles.titleText}/>
         </TouchableOpacity>

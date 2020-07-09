@@ -13,8 +13,8 @@ import {
 import { Container, Item, Form, Input, Button, Label } from "native-base";
 import * as firebase from "firebase";
 import { MonoText } from '../components/StyledText';
-//import Question from '../components/Question';
-//import FAQScreen from '../screens/FAQScreen';
+import Question from '../components/Question';
+import FAQScreen from '../screens/FAQScreen';
 
 firebaseConfig = {
   apiKey: "AIzaSyDdKrXwNDWZ9Q9F3z35ude-B3a6KRZvVI8",
@@ -104,7 +104,7 @@ function DevelopmentModeNotice() {
 }
 
 function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync({FAQScreen});
+  //WebBrowser.openBrowserAsync({FAQScreen});
 }
 
 function handleHelpPress() {
