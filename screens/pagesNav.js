@@ -9,6 +9,8 @@ import HeadNeckScreen from '../screens/HeadNeckScreen';
 import ThoraxScreen from '../screens/ThoraxScreen';
 import AbdoPelvisScreen from '../screens/AbdoPelvisScreen';
 import BackLimbsScreen from '../screens/BackLimbsScreen';
+import EmbryologyScreen from '../screens/EmbryologyScreen'
+//import VideoScreen from '../screens/VideoViews'
 
 var {height, width} = Dimensions.get('window');
   console.log (height, width)
@@ -109,19 +111,29 @@ import {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-
-         
-    
             <Text style={{ color: 'white', fontSize: 20, marginTop: 10, marginLeft: 30 }}>BACK AND LIMBS</Text>
             <View style={styles.BoxBorder(height, width)}>
             <Image source={require('../assets/images/interfaceIcons_Artboard6.png')} style={{width: 100, height: 130, }} />
+          </View> 
+          <BackLimbsScreen/>
+          </View>
+          <View
+            style={{
+              backgroundColor: '#282828',
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={{ color: 'white', fontSize: 20, marginTop: 10}}>EMBRYOLOGY</Text>
+            <View style={styles.BoxBorder(height, width)}>
+            <Image source={require('../assets/images/interfaceIcons_Artboard1.png')} style={{width: 100, height: 130, }} />
+          </View>
+          <EmbryologyScreen/>
           </View>
             
-          <BackLimbsScreen/>
-
-          </View>
+          
         </IndicatorViewPager>
-</View>
+        </View>
 );
   }
  
@@ -129,7 +141,7 @@ import {
 
 
   _renderDotIndicator() {
-    return <PagerDotIndicator pageCount={4} />;
+    return <PagerDotIndicator pageCount={5} />;
   }
   _renderTabIndicator() {
     let tabs = [
@@ -144,6 +156,9 @@ import {
       },
       {
         text: 'Four',
+      },
+      {
+        text: 'Five',
       },
     ];
     return <PagerTabIndicator tabs={tabs} />;

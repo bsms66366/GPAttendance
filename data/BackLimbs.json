@@ -2,8 +2,8 @@
 	"video": {
 		"video": [
 			{
-				"title": "Back revision",
-				"urlPath": "https://mediastream.brighton.ac.uk/Play/33370"
+				"title": "Introduction to the Muscular system",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/35925"
 			},
 			{
 				"title": "Gluteal region and posterior thigh",
@@ -32,6 +32,10 @@
 			{
 				"title": "Anterior Thigh",
 				"urlPath": "https://mediastream.brighton.ac.uk/Play/31937"
+			},
+			{
+				"title": "Back revision",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/33370"
 			}
 		]
 	}

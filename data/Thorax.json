@@ -2,14 +2,21 @@
 	"video": {
 		"video": [
 			{
-				"title": "Shoulder joint dissection",
-				"urlPath": "https://mediastream.brighton.ac.uk/Play/33371"
+				"title": "An Introduction to the Cardiorespiratory System",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/35923"
 			},
-			{
-				"title": "Back revision dissection",
-				"urlPath": "https://mediastream.brighton.ac.uk/Play/33370"
+			{	
+				"title": "Thorax- Intercostal Spaces",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/36022"
+			},
+			{	
+				"title": "Thorax- The Breast",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/36020"
+			},
+			{	
+				"title": "Thorax- Pectoralis Major and Minor",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/36024"
 			}
-			
 		]
 	}
 }

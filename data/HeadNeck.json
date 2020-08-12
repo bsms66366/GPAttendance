@@ -2,12 +2,20 @@
 	"video": {
 		"video": [
 			{
-				"title": "Introduction",
-				"urlPath": "https://mediastream.brighton.ac.uk/Play/32410"
+				"title": "An Introduction to the Lymphatic System",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/35924"
 			},
 			{
 				"title": "Brachial Plexus",
 				"urlPath": "https://mediastream.brighton.ac.uk/Play/31880"
+			},
+			{
+				"title": "Meninges",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/35931"
+			},
+			{
+				"title": "Dural Venous Sinuses",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/35931"
 			}
 		]
 	}

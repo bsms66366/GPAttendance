@@ -40,7 +40,7 @@ export default function HomeScreen() {
             source={
               __DEV__
                 ? require('../assets/images/Logo9.png')
-                : require('../assets/images/robot-prod.png')
+                : require('../assets/images/BSMSLogo.png')
 
             }
             style={styles.welcomeImage}
@@ -58,7 +58,9 @@ export default function HomeScreen() {
        FAQ
       </Text>
         </View>
-
+        <Text onPress={handlePrivacyPress} style={styles.helpLinkText2}>
+       Privacy Notice
+      </Text>
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
 
@@ -97,7 +99,7 @@ function DevelopmentModeNotice() {
   } else {
     return (
       <Text style={styles.developmentModeText}>
-        You are not in development mode: your app will run at full speed.
+       
       </Text>
     );
   }
@@ -105,6 +107,14 @@ function DevelopmentModeNotice() {
 
 function handleLearnMorePress() {
   //WebBrowser.openBrowserAsync({FAQScreen});
+  WebBrowser.openBrowserAsync(
+  'https://ali.brighton.domains/Interface/FAQ.mjs'
+  );
+}
+function handlePrivacyPress() {
+  WebBrowser.openBrowserAsync(
+    'https://ali.brighton.domains/Interface/Privacy.mjs'
+  );
 }
 
 function handleHelpPress() {
@@ -199,5 +209,10 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#BABABA',
+  },
+  helpLinkText2: {
+    fontSize: 12,
+    color: '#BABABA',
+    textAlign: 'center',
   },
 });

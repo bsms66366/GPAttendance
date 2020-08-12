@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cj s expo app",
-    "slug": "testing",
+    "name": "ali app version 4",
+    "slug": "ali",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
@@ -9,11 +9,11 @@
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "1.3.0",
     "orientation": "landscape",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/appstore.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/BSMSLogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,10 +21,12 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "./assets/images/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.bsms.ali",
       "supportsTablet": true
-    }
+    },
+    "description": "anatomy lab interface dissection table app"
   }
 }

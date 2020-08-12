@@ -28,7 +28,7 @@ export default function LinksScreen() {
         </View> 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://www.clinicalkey.com/#!/browse/book/3-s2.0-C20150000041') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard21.png')} style ={styles.IconStyle} />  
+          <Image source={require('../assets/images/interfaceIcons_Artboard27.png')} style ={styles.IconStyle} />  
         <Button title="Text books" style={styles.titleText}/>
         </TouchableOpacity>
         </View> 

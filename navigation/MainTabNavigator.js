@@ -6,23 +6,11 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ModulesScreen from '../screens/ModulesScreen';
 import CoursesScreen from '../screens/CoursesScreen';
-//import CoursesNavigator from '../navigation/CoursesNavigator';
 import RegionsScreen from '../screens/RegionsScreen';
 import informationScreen from '../screens/informationScreen';
 import ResourcesScreen from '../screens/ResourcesScreen';
 import QuizzesScreen from '../screens/QuizzesScreen';
-import VideoScreen from '../screens/VideoScreen';
-import PagesNav from '../screens/PagesNav';
-//import FAQScreen from '../screens/FAQScreen';
-
-//import DropdownsScreen from '../screens/DropdownsScreen';
-//import StudentLogin from '../screens/StudentLogin';
-//import NotesScreen from '../screens/NotesScreen';
-//import LoginScreen from "../screens/LoginScreen";
-//import PhoneLogin from "../screens/PhoneLogin";
-//import List from '.components/List';
-//import VideoPlaylist from '../screens/VideoPlaylist';
-//import FeedbackScreen from '../screens/FeedbackScreen';
+import VideoViews from '../screens/VideoViews'
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -118,7 +106,7 @@ SettingsStack.path = '';
 /*****************************************************feedback****/
 const GameStack = createStackNavigator(
   {
-    PagesNav: PagesNav
+    VideoViews: VideoViews,
   },
   config
 );
