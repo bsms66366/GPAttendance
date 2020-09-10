@@ -65,7 +65,7 @@ const ModuleStack = createStackNavigator(
 );
 
 ModuleStack.navigationOptions = {
-  tabBarLabel: 'Phase 1',
+  tabBarLabel: 'Medicine',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-school' : 'md-link'} />
   ),

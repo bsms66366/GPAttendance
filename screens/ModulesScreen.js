@@ -9,10 +9,10 @@ export default function LinksScreen() {
   return (
 
     <View style={styles.v_container}>
-      <View style={styles.Logo}>
+     {/*  <View style={styles.Logo}>
         <Image source={require('../assets/images/Logo5.png')} style={{width: 189, height: 90, }} />  
-      </View>
-      <View style={{flex: 1, flexDirection: 'row', flexWrap:1}}>
+      </View> */}
+      <View style={{flex: 1, flexDirection: 'row', flexWrap:'wrap'}}>
         
         <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_114493_1&handle=cp_announcements&mode=cpview') }>
@@ -90,7 +90,7 @@ IconStyle:{
 
 BoxBorder: (height, width) => ({
     marginTop: 30,
-    width: (width /3)-30, 
+    width: (width /3)-10, 
     height: '40%',
     borderColor: '#bcba40',
     borderStyle:'dotted',

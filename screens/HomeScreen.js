@@ -40,13 +40,13 @@ export default function HomeScreen() {
             source={
               __DEV__
                 ? require('../assets/images/Logo9.png')
-                : require('../assets/images/BSMSLogo.png')
+                : require('../assets/images/Logo9.png')
 
             }
             style={styles.welcomeImage}
           />
-<Text style={styles.getStartedText}>Wecome to the BSMS Anatomy Labs Interface</Text>
-<Text style={styles.getStartedText}>the dissection table companion</Text>
+<Text style={styles.getStartedText}>Wecome to the BSMS Anatomy Laboratory Interface</Text>
+<Text style={styles.getStartedText}>The dissection table companion</Text>
 
 
 
@@ -113,7 +113,7 @@ function handleLearnMorePress() {
 }
 function handlePrivacyPress() {
   WebBrowser.openBrowserAsync(
-    'https://ali.brighton.domains/Interface/Privacy.mjs'
+    'https://ali.brighton.domains/Interface/privacy.html'
   );
 }
 

@@ -1,15 +1,14 @@
 {
   "expo": {
-    "name": "ali app version 4",
+    "name": "ali app version 7",
     "slug": "ali",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.3.0",
+    "version": "1.7.0",
     "orientation": "landscape",
     "icon": "./assets/images/appstore.png",
     "splash": {
@@ -27,6 +26,9 @@
       "bundleIdentifier": "com.bsms.ali",
       "supportsTablet": true
     },
-    "description": "anatomy lab interface dissection table app"
+    "description": "anatomy lab interface dissection table app",
+    "android": {
+      "package": "com.bsms.ali"
+    }
   }
 }

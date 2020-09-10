@@ -1,5 +1,6 @@
 import { Subscription } from '@unimodules/core';
-import { PlaybackStatus, PlaybackStatusToSet } from '../AV';
+import { PermissionResponse, PermissionStatus } from 'unimodules-permissions-interface';
+import { AVPlaybackStatus, AVPlaybackStatusToSet } from '../AV';
 import { Sound } from './Sound';
 export declare type RecordingOptions = {
     android: {
@@ -92,6 +93,9 @@ export declare type RecordingStatus = {
     isDoneRecording: boolean;
     durationMillis: number;
 };
+export { PermissionResponse, PermissionStatus };
+export declare function getPermissionsAsync(): Promise<PermissionResponse>;
+export declare function requestPermissionsAsync(): Promise<PermissionResponse>;
 export declare class Recording {
     _subscription: Subscription | null;
     _canRecord: boolean;
@@ -116,12 +120,12 @@ export declare class Recording {
     pauseAsync(): Promise<RecordingStatus>;
     stopAndUnloadAsync(): Promise<RecordingStatus>;
     getURI(): string | null;
-    createNewLoadedSound(initialStatus?: PlaybackStatusToSet, onPlaybackStatusUpdate?: ((status: PlaybackStatus) => void) | null): Promise<{
+    createNewLoadedSound(initialStatus?: AVPlaybackStatusToSet, onPlaybackStatusUpdate?: ((status: AVPlaybackStatus) => void) | null): Promise<{
         sound: Sound;
-        status: PlaybackStatus;
+        status: AVPlaybackStatus;
     }>;
-    createNewLoadedSoundAsync(initialStatus?: PlaybackStatusToSet, onPlaybackStatusUpdate?: ((status: PlaybackStatus) => void) | null): Promise<{
+    createNewLoadedSoundAsync(initialStatus?: AVPlaybackStatusToSet, onPlaybackStatusUpdate?: ((status: AVPlaybackStatus) => void) | null): Promise<{
         sound: Sound;
-        status: PlaybackStatus;
+        status: AVPlaybackStatus;
     }>;
 }

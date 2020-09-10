@@ -9,10 +9,10 @@ export default function LinksScreen() {
   return (
 
     <View style={styles.v_container}>
-      <View style={styles.Logo}>
+     {/*  <View style={styles.Logo}>
         <Image source={require('../assets/images/Logo5.png')} style={{width: 189, height: 90, }} />  
-      </View>
-      <View style={{flex: 1, flexDirection: 'row', flexWrap:1}}>
+      </View> */}
+      <View style={{flex: 1, flexDirection: 'row', flexWrap:'wrap'}}>
         
         <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('http://bsms6636.brighton.domains/102/') }>
@@ -67,15 +67,15 @@ const styles = StyleSheet.create({
 
 box: {
   width: 900,
-  paddingTop: 50,
-  paddingLeft: 20,
+  paddingTop: 80,
+  paddingRight: 20,
   justifyContent: 'center',
 },
 
 Logo: {
     height: 80,
     alignItems: 'center',
-},
+  },
 
 IconStyle:{
     width: 120, 
@@ -84,7 +84,7 @@ IconStyle:{
 
 BoxBorder: (height, width) => ({
     marginTop: 30,
-    width: (width /3)-30, 
+    width: (width /3)-10, 
     height: '40%',
     borderColor: '#bcba40',
     borderStyle:'dotted',

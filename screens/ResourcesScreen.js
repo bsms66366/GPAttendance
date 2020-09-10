@@ -9,10 +9,10 @@ export default function LinksScreen() {
   return (
 
     <View style={styles.v_container}>
-      <View style={styles.Logo}>
+     {/*  <View style={styles.Logo}>
         <Image source={require('../assets/images/Logo5.png')} style={{width: 189, height: 90, }} />  
-      </View>
-      <View style={{flex: 1, flexDirection: 'column', flexWrap:1}}>
+      </View> */}
+      <View style={{flex: 1, flexDirection: 'column', flexWrap:'wrap'}}>
 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/sessionpage.php') }>
@@ -32,10 +32,22 @@ export default function LinksScreen() {
         <Button title="Text books" style={styles.titleText}/>
         </TouchableOpacity>
         </View> 
-        <View style={styles.BoxBorder(height, width)}>
+       <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://nearpod.com') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard12.png')} style ={styles.IconStyle} />  
         <Button title="Presentations" style={styles.titleText}/>
+        </TouchableOpacity>
+        </View>
+        <View style={styles.BoxBorder(height, width)}>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/360Tour/index.html') }>
+          <Image source={require('../assets/images/interfaceIcons_Artboard28.png')} style ={styles.IconStyle} />  
+        <Button title="360 Lab Tour" style={styles.titleText}/>
+        </TouchableOpacity>
+        </View> 
+        <View style={styles.BoxBorder(height, width)}>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://universityofsussex.eu.qualtrics.com/jfe/form/SV_bfNMhdeog4HVbGR') }>
+          <Image source={require('../assets/images/interfaceIcons_Artboard19.png')} style ={styles.IconStyle} />  
+        <Button title="Feedback" style={styles.titleText}/>
         </TouchableOpacity>
         </View> 
        </View>
@@ -67,8 +79,8 @@ IconStyle:{
 },
 
 BoxBorder: (height, width) => ({
-    marginTop: 40,
-    width: (width /2)-10, 
+    marginTop: 30,
+    width: (width /3)-10, 
     height: '40%',
     borderColor: '#bcba40',
     borderStyle:'dotted',
@@ -81,7 +93,7 @@ BoxBorder: (height, width) => ({
 
 v_container: {
     flex: 1,
-    paddingTop: 30,
+    paddingTop: 20,
     backgroundColor: '#282828',
     justifyContent: 'center',
   },

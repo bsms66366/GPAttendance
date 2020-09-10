@@ -13,13 +13,13 @@ import ModulesScreen from '../screens/ModulesScreen';
   return (
 
     <View style={styles.v_container}>
-      <View style={styles.Logo}>
+     {/*  <View style={styles.Logo}>
         <Image source={require('../assets/images/Logo5.png')} style={{width: 189, height: 90, }} />  
-      </View>
-      <View style={{flex: 1, flexDirection: 'row', flexWrap:1}}>
+      </View> */}
+      <View style={{flex: 1, flexDirection: 'row', flexWrap:'wrap'}}>
       
         <View style={styles.BoxBorder(height, width)}>
-          <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/modulepage/view?course_id=_112236_1&cmp_tab_id=_298705_1&editMode=true&mode=cpview') }>
+          <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/content/contentWrapper.jsp?course_id=_112236_1&displayName=BMBS%3A+My+Course+Link&href=https%3A%2F%2Fstudentcentral.brighton.ac.uk%2Fwebapps%2Fblackboard%2Fexecute%2Fmodulepage%2Fview%3Fcourse_id%3D_78820_1%26cmp_tab_id%3D_172171_1%26editMode%3Dtrue%26mode%3Dcpview&cR2XilcGYOo=ac%2BrgtYErOV9oLSydnevJ5VL2elf91GRX1703bwlW5I%3D') }>
             <Image source={require('../assets/images/interfaceIcons_Artboard1.png')} style ={styles.IconStyle} /> 
                 <Button title="Phase 1" style={styles.titleText}/>
           </TouchableOpacity>
@@ -28,14 +28,14 @@ import ModulesScreen from '../screens/ModulesScreen';
         
         
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/papage.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/papage.php') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard7.png')} style ={styles.IconStyle} />  
           <Button title="PA Course" style={styles.titleText}/>
            </TouchableOpacity>
           </View>
 
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/papage.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://www.brighton.ac.uk/studying-here/subject-areas/health/pharmacy/index.aspx') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard23.png')} style ={styles.IconStyle} />
             <Button title="Pharmacy" style={styles.titleText}/>
         </TouchableOpacity>
@@ -43,9 +43,9 @@ import ModulesScreen from '../screens/ModulesScreen';
 
 
          <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/postGrad.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/neuroscience.php') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard22.png')} style ={styles.IconStyle} />
-            <Button title="neuroscience" style={styles.titleText}/>
+            <Button title="Neuroscience" style={styles.titleText}/>
         </TouchableOpacity>
         </View>
 
@@ -59,7 +59,7 @@ import ModulesScreen from '../screens/ModulesScreen';
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/postGrad.php') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard22.png')} style ={styles.IconStyle} />
-            <Button title="MSC Radiology" style={styles.titleText}/>
+            <Button title="Post Graduates" style={styles.titleText}/>
         </TouchableOpacity>
         </View>
 
@@ -71,7 +71,7 @@ import ModulesScreen from '../screens/ModulesScreen';
         </View>
 
         <View style={styles.BoxBorder(height, width)}>
-        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/postGrad.php') }>
+        <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://www.brighton.ac.uk/courses/study/physiotherapy-bsc-hons.aspx') }>
           <Image source={require('../assets/images/UoB3.png')} style ={styles.IconStyle} />
             <Button title="Physiotherapy" style={styles.titleText}/>
         </TouchableOpacity>
@@ -87,8 +87,8 @@ import ModulesScreen from '../screens/ModulesScreen';
 const styles = StyleSheet.create({
 
 box: {
-  width: 900,
-  paddingTop: 80,
+  width: 950,
+  paddingTop: 60,
   paddingRight: 20,
   justifyContent: 'center',
 },
@@ -106,8 +106,8 @@ IconStyle:{
 },
 
 BoxBorder: (height, width) => ({
-    marginTop: 40,
-    width: (width /4)-18, 
+    marginTop: 20,
+    width: (width /4)-10, 
     height: '40%',
     borderColor: '#bcba40',
     borderStyle:'dotted',

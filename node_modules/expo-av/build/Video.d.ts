@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { Playback, PlaybackSource, PlaybackStatus, PlaybackStatusToSet } from './AV';
-import { ExponentVideoComponent, FullscreenUpdateEvent, NativeProps, NaturalSize, VideoProps, ReadyForDisplayEvent, ResizeMode, VideoState } from './Video.types';
-export { ExponentVideoComponent, FullscreenUpdateEvent, NativeProps, NaturalSize, VideoProps, ReadyForDisplayEvent, ResizeMode, VideoState, };
+import { NativeMethods } from 'react-native';
+import { Playback, AVPlaybackSource, AVPlaybackStatus, AVPlaybackStatusToSet, AVPlaybackNativeSource } from './AV';
+import { ExponentVideoComponent, VideoFullscreenUpdateEvent, VideoNativeProps, VideoNaturalSize, VideoProps, VideoReadyForDisplayEvent, ResizeMode, VideoState } from './Video.types';
+export { ExponentVideoComponent, VideoFullscreenUpdateEvent, VideoNativeProps, VideoNaturalSize, VideoProps, VideoReadyForDisplayEvent, ResizeMode, VideoState, AVPlaybackStatus, AVPlaybackStatusToSet, AVPlaybackNativeSource, };
 export declare const FULLSCREEN_UPDATE_PLAYER_WILL_PRESENT = 0;
 export declare const FULLSCREEN_UPDATE_PLAYER_DID_PRESENT = 1;
 export declare const FULLSCREEN_UPDATE_PLAYER_WILL_DISMISS = 2;
@@ -34,9 +35,6 @@ export default class Video extends React.Component<VideoProps, VideoState> imple
         collapsable?: PropTypes.Validator<boolean | undefined> | undefined;
         needsOffscreenAlphaCompositing?: PropTypes.Validator<boolean | undefined> | undefined;
         renderToHardwareTextureAndroid?: PropTypes.Validator<boolean | undefined> | undefined;
-        accessibilityViewIsModal?: PropTypes.Validator<boolean | undefined> | undefined;
-        accessibilityActions?: PropTypes.Validator<string[] | undefined> | undefined;
-        onAccessibilityAction?: PropTypes.Validator<(() => void) | undefined> | undefined;
         shouldRasterizeIOS?: PropTypes.Validator<boolean | undefined> | undefined;
         isTVSelectable?: PropTypes.Validator<boolean | undefined> | undefined;
         hasTVPreferredFocus?: PropTypes.Validator<boolean | undefined> | undefined;
@@ -63,16 +61,23 @@ export default class Video extends React.Component<VideoProps, VideoState> imple
         onTouchCancel?: PropTypes.Validator<((event: import("react-native").GestureResponderEvent) => void) | undefined> | undefined;
         onTouchEndCapture?: PropTypes.Validator<((event: import("react-native").GestureResponderEvent) => void) | undefined> | undefined;
         accessible?: PropTypes.Validator<boolean | undefined> | undefined;
+        accessibilityActions?: PropTypes.Validator<readonly Readonly<{
+            name: import("react-native").AccessibilityActionName;
+            label?: string | undefined;
+        }>[] | undefined> | undefined;
         accessibilityLabel?: PropTypes.Validator<string | undefined> | undefined;
         accessibilityRole?: PropTypes.Validator<"none" | "button" | "header" | "link" | "menu" | "menuitem" | "summary" | "image" | "switch" | "text" | "search" | "keyboardkey" | "adjustable" | "imagebutton" | "alert" | "checkbox" | "combobox" | "menubar" | "progressbar" | "radio" | "radiogroup" | "scrollbar" | "spinbutton" | "tab" | "tablist" | "timer" | "toolbar" | undefined> | undefined;
-        accessibilityStates?: PropTypes.Validator<import("react-native").AccessibilityStates[] | undefined> | undefined;
         accessibilityState?: PropTypes.Validator<import("react-native").AccessibilityState | undefined> | undefined;
         accessibilityHint?: PropTypes.Validator<string | undefined> | undefined;
+        accessibilityValue?: PropTypes.Validator<import("react-native").AccessibilityValue | undefined> | undefined;
+        onAccessibilityAction?: PropTypes.Validator<((event: import("react-native").AccessibilityActionEvent) => void) | undefined> | undefined;
         accessibilityComponentType?: PropTypes.Validator<"none" | "button" | "radiobutton_checked" | "radiobutton_unchecked" | undefined> | undefined;
         accessibilityLiveRegion?: PropTypes.Validator<"none" | "polite" | "assertive" | undefined> | undefined;
         importantForAccessibility?: PropTypes.Validator<"auto" | "yes" | "no" | "no-hide-descendants" | undefined> | undefined;
         accessibilityElementsHidden?: PropTypes.Validator<boolean | undefined> | undefined;
-        accessibilityTraits?: PropTypes.Validator<"key" | "none" | "button" | "header" | "link" | "summary" | "image" | "text" | "search" | "adjustable" | "disabled" | "selected" | "plays" | "frequentUpdates" | "startsMedia" | "allowsDirectInteraction" | "pageTurn" | import("react-native").AccessibilityTrait[] | undefined> | undefined;
+        accessibilityTraits?: PropTypes.Validator<"key" | "none" | "button" | "header" | "link" | "summary" | "image" | "text" | "search" | "adjustable" | "selected" | "plays" | "disabled" | "frequentUpdates" | "startsMedia" | "allowsDirectInteraction" | "pageTurn" | import("react-native").AccessibilityTrait[] | undefined> | undefined;
+        accessibilityViewIsModal?: PropTypes.Validator<boolean | undefined> | undefined;
+        onAccessibilityEscape?: PropTypes.Validator<(() => void) | undefined> | undefined;
         onAccessibilityTap?: PropTypes.Validator<(() => void) | undefined> | undefined;
         onMagicTap?: PropTypes.Validator<(() => void) | undefined> | undefined;
         accessibilityIgnoresInvertColors?: PropTypes.Validator<boolean | undefined> | undefined;
@@ -118,44 +123,46 @@ export default class Video extends React.Component<VideoProps, VideoState> imple
         translateY: PropTypes.Requireable<number>;
         rotation: PropTypes.Requireable<number>;
     };
-    _nativeRef: React.RefObject<React.Component<NativeProps, any, any> & import("react-native").NativeMethodsMixinStatic>;
+    _nativeRef: React.RefObject<React.Component<VideoNativeProps, any, any> & NativeMethods>;
+    _onPlaybackStatusUpdate: ((status: AVPlaybackStatus) => void) | null;
     constructor(props: VideoProps);
-    setNativeProps(nativeProps: NativeProps): void;
-    _handleNewStatus: (status: PlaybackStatus) => void;
-    _performOperationAndHandleStatusAsync: (operation: (tag: number) => Promise<PlaybackStatus>) => Promise<PlaybackStatus>;
-    _setFullscreen: (value: boolean) => Promise<PlaybackStatus>;
-    presentFullscreenPlayer: () => Promise<PlaybackStatus>;
-    presentIOSFullscreenPlayer: () => Promise<PlaybackStatus>;
-    presentFullscreenPlayerAsync: () => Promise<PlaybackStatus>;
-    dismissFullscreenPlayer: () => Promise<PlaybackStatus>;
+    setNativeProps(nativeProps: VideoNativeProps): void;
+    _handleNewStatus: (status: AVPlaybackStatus) => void;
+    _performOperationAndHandleStatusAsync: (operation: (tag: number) => Promise<AVPlaybackStatus>) => Promise<AVPlaybackStatus>;
+    _setFullscreen: (value: boolean) => Promise<AVPlaybackStatus>;
+    presentFullscreenPlayer: () => Promise<AVPlaybackStatus>;
+    presentIOSFullscreenPlayer: () => Promise<AVPlaybackStatus>;
+    presentFullscreenPlayerAsync: () => Promise<AVPlaybackStatus>;
+    dismissFullscreenPlayer: () => Promise<AVPlaybackStatus>;
     dismissIOSFullscreenPlayer: () => void;
-    getStatusAsync: () => Promise<PlaybackStatus>;
-    loadAsync: (source: PlaybackSource, initialStatus?: PlaybackStatusToSet, downloadFirst?: boolean) => Promise<PlaybackStatus>;
-    unloadAsync: () => Promise<PlaybackStatus>;
-    setStatusAsync: (status: PlaybackStatusToSet) => Promise<PlaybackStatus>;
-    replayAsync: (status?: PlaybackStatusToSet) => Promise<PlaybackStatus>;
-    playAsync: () => Promise<PlaybackStatus>;
+    getStatusAsync: () => Promise<AVPlaybackStatus>;
+    loadAsync: (source: AVPlaybackSource, initialStatus?: AVPlaybackStatusToSet, downloadFirst?: boolean) => Promise<AVPlaybackStatus>;
+    unloadAsync: () => Promise<AVPlaybackStatus>;
+    setStatusAsync: (status: AVPlaybackStatusToSet) => Promise<AVPlaybackStatus>;
+    replayAsync: (status?: AVPlaybackStatusToSet) => Promise<AVPlaybackStatus>;
+    setOnPlaybackStatusUpdate(onPlaybackStatusUpdate: ((status: AVPlaybackStatus) => void) | null): void;
+    playAsync: () => Promise<AVPlaybackStatus>;
     playFromPositionAsync: (positionMillis: number, tolerances?: {
         toleranceMillisBefore?: number;
         toleranceMillisAfter?: number;
-    }) => Promise<PlaybackStatus>;
-    pauseAsync: () => Promise<PlaybackStatus>;
-    stopAsync: () => Promise<PlaybackStatus>;
+    }) => Promise<AVPlaybackStatus>;
+    pauseAsync: () => Promise<AVPlaybackStatus>;
+    stopAsync: () => Promise<AVPlaybackStatus>;
     setPositionAsync: (positionMillis: number, tolerances?: {
         toleranceMillisBefore?: number;
         toleranceMillisAfter?: number;
-    }) => Promise<PlaybackStatus>;
-    setRateAsync: (rate: number, shouldCorrectPitch: boolean) => Promise<PlaybackStatus>;
-    setVolumeAsync: (volume: number) => Promise<PlaybackStatus>;
-    setIsMutedAsync: (isMuted: boolean) => Promise<PlaybackStatus>;
-    setIsLoopingAsync: (isLooping: boolean) => Promise<PlaybackStatus>;
-    setProgressUpdateIntervalAsync: (progressUpdateIntervalMillis: number) => Promise<PlaybackStatus>;
+    }) => Promise<AVPlaybackStatus>;
+    setRateAsync: (rate: number, shouldCorrectPitch: boolean) => Promise<AVPlaybackStatus>;
+    setVolumeAsync: (volume: number) => Promise<AVPlaybackStatus>;
+    setIsMutedAsync: (isMuted: boolean) => Promise<AVPlaybackStatus>;
+    setIsLoopingAsync: (isLooping: boolean) => Promise<AVPlaybackStatus>;
+    setProgressUpdateIntervalAsync: (progressUpdateIntervalMillis: number) => Promise<AVPlaybackStatus>;
     _nativeOnPlaybackStatusUpdate: (event: {
-        nativeEvent: PlaybackStatus;
+        nativeEvent: AVPlaybackStatus;
     }) => void;
     _nativeOnLoadStart: () => void;
     _nativeOnLoad: (event: {
-        nativeEvent: PlaybackStatus;
+        nativeEvent: AVPlaybackStatus;
     }) => void;
     _nativeOnError: (event: {
         nativeEvent: {
@@ -163,10 +170,10 @@ export default class Video extends React.Component<VideoProps, VideoState> imple
         };
     }) => void;
     _nativeOnReadyForDisplay: (event: {
-        nativeEvent: ReadyForDisplayEvent;
+        nativeEvent: VideoReadyForDisplayEvent;
     }) => void;
     _nativeOnFullscreenUpdate: (event: {
-        nativeEvent: FullscreenUpdateEvent;
+        nativeEvent: VideoFullscreenUpdateEvent;
     }) => void;
     _renderPoster: () => JSX.Element | null;
     render(): JSX.Element;
