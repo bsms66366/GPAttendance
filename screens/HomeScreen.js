@@ -1,4 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
+import * as Font from 'expo-font';
 import React from 'react';
 import {
   Image,

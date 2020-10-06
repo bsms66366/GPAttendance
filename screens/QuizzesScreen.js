@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Font from 'expo-font';
 import {ScrollView, StyleSheet, View, Image, Text, Button, Dimensions, TouchableOpacity} from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
@@ -17,42 +18,42 @@ export default function LinksScreen() {
         <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('http://bsms6636.brighton.domains/102/') }>
             <Image source={require('../assets/images/interfaceIcons_Artboard1.png')} style ={styles.IconStyle} /> 
-             <Button title="Module 102 Quiz" style={styles.titleText}/>
+            <Text style={styles.titleText}> Module 102 Quiz </Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('http://bsms6636.brighton.domains/Year1/') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard2.png')} style ={styles.IconStyle} />  
-        <Button title="Module 103 Quiz" style={styles.titleText}/>
+          <Image source={require('../assets/images/interfaceIcons_Artboard2.png')} style ={styles.IconStyle} /> 
+          <Text style={styles.titleText}> Module 103 Quiz </Text> 
           </TouchableOpacity>
         </View>
 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('http://bsms6636.brighton.domains/104/') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard3.png')} style ={styles.IconStyle} />  
-        <Button title="Module 104 Quiz" style={styles.titleText}/>
+          <Image source={require('../assets/images/interfaceIcons_Artboard3.png')} style ={styles.IconStyle} />
+          <Text style={styles.titleText}> Module 104 Quiz </Text> 
     </TouchableOpacity>
         </View>
 
         <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://www.bsms6636.brighton.domains/anatomyyear2/') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard4.png')} style ={styles.IconStyle} />
-          <Button title="Module 202 Quiz" style={styles.titleText}/>
+          <Text style={styles.titleText}> Module 202 Quiz </Text>
     </TouchableOpacity>
         </View>
 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('http://bsms6636.brighton.domains/203/') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard5.png')} style ={styles.IconStyle} />  
-        <Button title="Module 203 Quiz" style={styles.titleText} />
+          <Image source={require('../assets/images/interfaceIcons_Artboard5.png')} style ={styles.IconStyle} />
+          <Text style={styles.titleText}> Module 203 Quiz </Text>
         </TouchableOpacity>
         </View>
 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('http://bsms6636.brighton.domains/204/') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard6.png')} style ={styles.IconStyle} />  
-        <Button title="Module 204 Quiz" style={styles.titleText} />
+          <Image source={require('../assets/images/interfaceIcons_Artboard6.png')} style ={styles.IconStyle} /> 
+          <Text style={styles.titleText}> Module 204 Quiz </Text>
         </TouchableOpacity>
         </View>
        </View>
@@ -104,7 +105,7 @@ v_container: {
   titleText: {
     fontFamily: 'Helvetica',
     fontSize: 20,
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
     color:'#bcba40',
   },
 });

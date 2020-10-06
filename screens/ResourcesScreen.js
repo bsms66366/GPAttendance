@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Font from 'expo-font';
 import {ScrollView, StyleSheet, View, Image, Text, Button, Dimensions, TouchableOpacity} from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
@@ -16,38 +17,38 @@ export default function LinksScreen() {
 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/sessionpage.php') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard8.png')} style ={styles.IconStyle} />  
-        <Button title="Session Notes" style={styles.titleText}/>
+          <Image source={require('../assets/images/interfaceIcons_Artboard8.png')} style ={styles.IconStyle} />
+          <Text style={styles.titleText}> Session Notes </Text> 
         </TouchableOpacity>
         </View> 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/Interface/admin/pathpage.php') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard9.png')} style ={styles.IconStyle} />  
-        <Button title="Path Pots" style={styles.titleText}/>
+          <Image source={require('../assets/images/interfaceIcons_Artboard9.png')} style ={styles.IconStyle} />
+          <Text style={styles.titleText}>  Path Pots </Text>  
         </TouchableOpacity>
         </View> 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://www.clinicalkey.com/#!/browse/book/3-s2.0-C20150000041') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard27.png')} style ={styles.IconStyle} />  
-        <Button title="Text books" style={styles.titleText}/>
+          <Text style={styles.titleText}> Text books </Text> 
         </TouchableOpacity>
         </View> 
        <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://nearpod.com') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard12.png')} style ={styles.IconStyle} />  
-        <Button title="Presentations" style={styles.titleText}/>
+          <Image source={require('../assets/images/interfaceIcons_Artboard12.png')} style ={styles.IconStyle} /> 
+          <Text style={styles.titleText}> Presentations </Text>  
         </TouchableOpacity>
         </View>
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://ali.brighton.domains/360Tour/index.html') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard28.png')} style ={styles.IconStyle} />  
-        <Button title="360 Lab Tour" style={styles.titleText}/>
+          <Image source={require('../assets/images/interfaceIcons_Artboard28.png')} style ={styles.IconStyle} /> 
+          <Text style={styles.titleText}> 360 Lab Tour </Text> 
         </TouchableOpacity>
         </View> 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://universityofsussex.eu.qualtrics.com/jfe/form/SV_bfNMhdeog4HVbGR') }>
-          <Image source={require('../assets/images/interfaceIcons_Artboard19.png')} style ={styles.IconStyle} />  
-        <Button title="Feedback" style={styles.titleText}/>
+          <Image source={require('../assets/images/interfaceIcons_Artboard19.png')} style ={styles.IconStyle} /> 
+          <Text style={styles.titleText}> Feedback </Text>
         </TouchableOpacity>
         </View> 
        </View>
@@ -100,8 +101,10 @@ v_container: {
 
   titleText: {
     fontFamily: 'Helvetica',
+    //fontFamily: 'Arial',
     fontSize: 20,
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
     color:'#bcba40',
-  },
+  }, 
 });
+//export default ResourcesScreen;

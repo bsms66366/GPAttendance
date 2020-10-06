@@ -17,44 +17,38 @@ export default function LinksScreen() {
         <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_114493_1&handle=cp_announcements&mode=cpview') }>
             <Image source={require('../assets/images/interfaceIcons_Artboard1.png')} style ={styles.IconStyle} /> 
-              <Button title="Module 102" style={styles.titleText} onPress={() => {
-            WebBrowser.openBrowserAsync('https://expo.io')}}/>
+            <Text style={styles.titleText}> Module 102 </Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course_entry&course_id=_114487_1&handle=announcements_entry&mode=view') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard2.png')} style ={styles.IconStyle} />  
-        <Button title="Module 103" style={styles.titleText} onPress={() => {
-          WebBrowser.openBrowserAsync('https://expo.io')}}/>
+          <Text style={styles.titleText}> Module 103 </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_114488_1&handle=cp_announcements&mode=cpview') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard3.png')} style ={styles.IconStyle} />  
-        <Button title="Module 104" style={styles.titleText} onPress={() => {
-    WebBrowser.openBrowserAsync('https://tools.brighton.ac.uk/medical-school/AnatomyInterface/admin/sessionpage.php')}}/>
+          <Text style={styles.titleText}> Module 104 </Text>
     </TouchableOpacity>
         </View>
         <View style={styles.BoxBorder(height, width)}>
           <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_114491_1&handle=cp_announcements&mode=cpview') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard4.png')} style ={styles.IconStyle} />
-          <Button title="Module 202" style={styles.titleText} onPress={() => {
-    WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_114491_1&handle=cp_announcements&mode=cpview')}}/>
+          <Text style={styles.titleText}> Module 202 </Text>
     </TouchableOpacity>
         </View>
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_114492_1&handle=cp_announcements&mode=cpview') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard5.png')} style ={styles.IconStyle} />  
-        <Button title="Module 203" style={styles.titleText} onPress={() => {
-    WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_114492_1&handle=cp_announcements&mode=cpview')}}/>
+          <Text style={styles.titleText}> Module 203 </Text>
     </TouchableOpacity>
         </View>
         <View style={styles.BoxBorder(height, width)}>
         <TouchableOpacity onPress = {() => WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_114493_1&handle=cp_announcements&mode=cpview') }>
           <Image source={require('../assets/images/interfaceIcons_Artboard6.png')} style ={styles.IconStyle} />  
-        <Button title="Module 204" style={styles.titleText} onPress={() => {
-    WebBrowser.openBrowserAsync('https://studentcentral.brighton.ac.uk/webapps/blackboard/execute/announcement?method=search&context=course&course_id=_114493_1&handle=cp_announcements&mode=cpview')}}/>
+          <Text style={styles.titleText}> Module 204 </Text>
     </TouchableOpacity>
         </View>
        
@@ -110,7 +104,7 @@ v_container: {
   titleText: {
     fontFamily: 'Helvetica',
     fontSize: 20,
-    fontWeight: 'bold',
+   // fontWeight: 'bold',
     color:'#bcba40',
   },
 });
