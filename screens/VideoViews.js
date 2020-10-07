@@ -49,6 +49,11 @@ export default class ViewPagerPage extends Component {
             <Image source={require('../assets/images/interfaceIcons_Artboard4.png')} style={{width: 100, height: 130, marginTop:10}} />
             <HeadNeckScreen/>
           </View>
+          <View style={{ backgroundColor: "#282828", alignItems: 'center'}}>
+            <Text style={{ color: 'white', fontSize: 20, marginTop: 20, textAlign:"center"}}>EAR NOSE AND THROAT</Text>
+            <Image source={require('../assets/images/interfaceIcons_Artboard29.png')} style={{width: 100, height: 130, marginTop:10}} />
+            <ENTScreen/>
+          </View>
           
           <View style={{ backgroundColor: "#282828", alignItems: 'center'}}>
             <Text style={{ color: 'white', fontSize: 20, marginTop: 20, textAlign:"center"}}>THORAX</Text>
