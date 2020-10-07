@@ -1,6 +1,8 @@
 import { StyleSheet, View, Text , Dimensions, Image} from "react-native";
 import React, { Component } from "react";
+import * as Font from 'expo-font';
 import HeadNeckScreen from '../screens/HeadNeckScreen';
+import ENTScreen from '../screens/ENTScreen';
 import ThoraxScreen from '../screens/ThoraxScreen';
 import AbdoPelvisScreen from '../screens/AbdoPelvisScreen';
 import BackLimbsScreen from '../screens/BackLimbsScreen';
@@ -83,17 +85,20 @@ export default class ViewPagerPage extends Component {
   }
  
   _renderTitleIndicator() {
-    return <PagerTitleIndicator titles={["introductions","head and neck", "thorax", "abdomen and pelvis","back and limbs","embryology"]} />;
+    return <PagerTitleIndicator titles={["introductions","head and neck", "ear, nose and throat", "thorax", "abdomen and pelvis","back and limbs","embryology"]} />;
   }
  
   _renderDotIndicator() {
-    return <PagerDotIndicator pageCount={6} />;
+    return <PagerDotIndicator pageCount={7} />;
   }
  
   /* _renderTabIndicator() {
     let tabs = [
       {
         text: "head and neck",
+      },
+      {
+        text: "ear, nose and throat",
       },
       {
         text: "thorax",
