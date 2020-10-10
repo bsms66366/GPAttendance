@@ -3,7 +3,7 @@
 		"video": [
 			
 			{	
-				"title": "TEar, Nose and Throat: Clinical importance of the paranasal air sinuses",
+				"title": "Ear, Nose and Throat: Clinical importance of the paranasal air sinuses",
 				"urlPath": "https://mediastream.brighton.ac.uk/Play/36614"
 			},
 			{	
@@ -13,7 +13,24 @@
 			{	
 				"title": "Ear, Nose and Throat: Olfaction",
 				"urlPath": "https://mediastream.brighton.ac.uk/Play/36618"
-			}
+            },
+            {	
+				"title": "Ear, Nose and Throat: Paranasal air sinuses",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/36627"
+            },
+            {	
+				"title": "Ear, Nose and Throat: Parotid gland and facial nerve",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/36619"
+            },
+            {	
+				"title": "Ear, Nose and Throat: Nasal cavity and epistaxis",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/36620"
+            },
+            {	
+				"title": "Ear, Nose and Throat: Unilateral sore throat with referred otalgia",
+				"urlPath": "https://mediastream.brighton.ac.uk/Play/36625"
+            }
+            
 		]
 	}
 }
