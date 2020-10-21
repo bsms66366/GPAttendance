@@ -100,9 +100,8 @@ v_container: {
   },
 
   titleText: {
-    fontFamily: 'Helvetica',
-    //fontFamily: 'Arial',
-    fontSize: 20,
+    fontFamily: 'Roboto-Regular.ttf',
+    fontSize: 16,
     //fontWeight: 'bold',
     color:'#bcba40',
   }, 

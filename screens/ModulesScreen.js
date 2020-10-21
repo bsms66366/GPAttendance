@@ -1,12 +1,16 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View, Image, Text, Button, Dimensions, TouchableOpacity} from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
-
-
+import * as Font from 'expo-font';
 export default function LinksScreen() {
   var {height, width} = Dimensions.get('window');
   console.log (height, width)
   return (
+
+
+
+
+
 
     <View style={styles.v_container}>
      {/*  <View style={styles.Logo}>

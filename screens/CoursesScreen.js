@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import * as Font from 'expo-font';
 import { createSwitchNavigator } from 'react-navigation';
 import {ScrollView, StyleSheet, View, Image, Text, Button, Dimensions, TouchableOpacity, Props } from 'react-native';
@@ -6,10 +6,11 @@ import * as WebBrowser from 'expo-web-browser';
 import ModulesScreen from '../screens/ModulesScreen';
 
 
+//export default class CoursesScreen extends React.Component{}
  function CoursesScreen({navigation, props}) {
   var {height, width} = Dimensions.get('window');
   console.log (height, width)
-
+  
   //const AppContainer = createAppContainer(AppNavigator);
   return (
 
@@ -130,7 +131,7 @@ v_container: {
 
   titleText: {
     fontFamily: 'Roboto-Regular.ttf',
-    fontSize: 20,
+    fontSize: 16,
     //fontWeight: 'bold',
     color:'#bcba40',
     alignItems: 'center',
