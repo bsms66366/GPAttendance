@@ -6,6 +6,7 @@ import { StyleSheet, View } from "react-native";
 //import '@firebase/auth';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import * as Font from 'expo-font';
+//import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MainTabNavigator from './MainTabNavigator';
 
 export default createAppContainer(

@@ -50,7 +50,7 @@ export default function LinksScreen() {
 const styles = StyleSheet.create({
 
 box: {
-  width: 900,
+  width: 1024,
   paddingTop: 80,
   paddingRight: 20,
   justifyContent: 'center',

@@ -1,34 +1,41 @@
 {
   "expo": {
-    "name": "ali app version 7",
-    "slug": "ali",
+    "name": "bsmsatt app version 1.0.0",
+    "slug": "bsmsatt",
     "privacy": "public",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.7.0",
-    "orientation": "landscape",
-    "icon": "./assets/images/appstore.png",
+    "version": "1.0.0",
+    "orientation": "Portrait",
+    "icon": "./assets/images/bsmsHelix[BLU]-02.png",
     "splash": {
-      "image": "./assets/images/BSMSLogo.png",
+      "image": "./assets/images/bsmsLogo[blu].png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": ["js", "jsx", "ts", "tsx", "svg"]
+    },
     "assetBundlePatterns": [
       "./assets/images/*"
     ],
+    
     "ios": {
-      "bundleIdentifier": "com.bsms.ali",
+      "bundleIdentifier": "com.bsms.att",
       "supportsTablet": true
     },
-    "description": "anatomy lab interface dissection table app",
+    "description": "bsms digital attendance app",
     "android": {
-      "package": "com.bsms.ali"
+      "package": "com.bsms.bsmsatt",
+      "versionCode": 1,
+      //"permissions":[USE_BIOMETRIC,USE_FINGERPRINT]
     }
   }
 }

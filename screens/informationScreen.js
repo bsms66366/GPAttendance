@@ -22,7 +22,7 @@ export default function HomeScreen() {
           <Image
             source={
               __DEV__
-                ? require('../assets/images/Logo9.png')
+                ? require('../assets/images/bsmsLogo[blu].png')
                 : require('../assets/images/robot-prod.png')
 
             }
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   tabBarInfoText: {
-    fontSize: 17,
+    fontSize: 16,
     color: 'rgba(96,100,109, 1)',
     textAlign: 'center',
   },
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
   },
   helpLinkText: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#bcba3e',
   },
 });

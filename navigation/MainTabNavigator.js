@@ -1,16 +1,26 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
+//import { FontAwesome5 } from '@expo/vector-icons';
+//import * as Font from 'expo-font';
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
+//import HomeScreen from '../screens/HomeScreen';
 import ModulesScreen from '../screens/ModulesScreen';
-import CoursesScreen from '../screens/CoursesScreen';
-import RegionsScreen from '../screens/RegionsScreen';
+import coursePage from '../screens/coursePage';
+//import RegionsScreen from '../screens/RegionsScreen';
 import informationScreen from '../screens/informationScreen';
-import ResourcesScreen from '../screens/ResourcesScreen';
-import QuizzesScreen from '../screens/QuizzesScreen';
-import VideoViews from '../screens/VideoViews'
+import InfoScreen from '../screens/InfoScreen';
+//import ExaminationsScreen from '../screens/ExaminationsScreen';
+//import ExamLog from '../screens/ExamLog';
+import SkillsScreen from '../screens/SkillsScreen';
+//import Video360Screen from '../screens/Video360Screen';
+import VideoCSScreen from '../screens/VideoCSScreen';
+//import svgFileScreen from '../screens/svgFileScreen'
+//import svgFile2 from '../screens/svgFile2'
+//import VideoViews from '../screens/VideoViews'
+//import clinicalSK from '../screens/clinicalSK';
+
+
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -19,7 +29,7 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Home: HomeScreen,
+    InfoScreen: InfoScreen,
   },
   config
 );
@@ -30,7 +40,7 @@ HomeStack.navigationOptions = {
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === 'ios'
+        Platform.OS === 'ios','android'
           ? `ios-information-circle${focused ? '' : '-outline'}`
           : 'md-link'
       }
@@ -42,15 +52,16 @@ HomeStack.path = '';
 /*****************************************************Courses****/
 const LinksStack = createStackNavigator(
   {
-    CourseScreen: CoursesScreen,
+    ModulesScreen: ModulesScreen,
   },
   config
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Courses',
+  tabBarLabel: 'Modules',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-school' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios','android'? 'md-list-box' : 'md-link'} />
+    //<TabBarIcon focused={focused} name={Platform.OS === 'android' ? 'md-school' : 'md-link'} />
   ),
 };
 
@@ -59,36 +70,36 @@ LinksStack.path = '';
 /*****************************************************modules****/
 const ModuleStack = createStackNavigator(
   {
-    ModulesScreen: ModulesScreen,
+    coursePage: coursePage,
   },
   config
 );
 
 ModuleStack.navigationOptions = {
-  tabBarLabel: 'Medicine',
+  tabBarLabel: 'Examinations',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-school' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios','android' ? 'md-bed' : 'md-link'} />
   ),
 };
 /*****************************************************Resources ****/
 
 const SessionsStack = createStackNavigator(
   {
-    ResourcesScreen: ResourcesScreen,
+    VideoCSScreen: VideoCSScreen,
   },
   config
 );
 SessionsStack.navigationOptions = {
-  tabBarLabel: 'Resources',
+  tabBarLabel: 'Video',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-browsers' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios','android' ? 'md-videocam' : 'md-link'} />
   ),
 };
 
 SessionsStack.path = '';
 
 /*****************************************************path pots****/
-const SettingsStack = createStackNavigator(
+/*const SettingsStack = createStackNavigator(
   {
     QuizzesScreen: QuizzesScreen,
   },
@@ -98,23 +109,23 @@ const SettingsStack = createStackNavigator(
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Quizzes',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-trophy' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios','android' ? 'md-trophy' : 'md-link'} />
   ),
 };
 
-SettingsStack.path = '';
+SettingsStack.path = '';*/
 /*****************************************************feedback****/
 const GameStack = createStackNavigator(
   {
-    VideoViews: VideoViews,
+   SkillsScreen: SkillsScreen,
   },
   config
 );
 
 GameStack.navigationOptions = {
-  tabBarLabel: 'Video',
+  tabBarLabel: 'Admin',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'md-videocam' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios','android' ? 'md-people' : 'md-link'} />
   ),
 };
 
@@ -127,7 +138,7 @@ const tabNavigator = createBottomTabNavigator({
   LinksStack,
   ModuleStack,
   SessionsStack,
-  SettingsStack,
+  //SettingsStack,
   GameStack,
   
 });

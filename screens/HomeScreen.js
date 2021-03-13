@@ -1,5 +1,4 @@
 import * as WebBrowser from 'expo-web-browser';
-import * as Font from 'expo-font';
 import React from 'react';
 import {
   Image,
@@ -11,24 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import { Container, Item, Form, Input, Button, Label } from "native-base";
-import * as firebase from "firebase";
 import { MonoText } from '../components/StyledText';
-import Question from '../components/Question';
-import FAQScreen from '../screens/FAQScreen';
-
-firebaseConfig = {
-  apiKey: "AIzaSyDdKrXwNDWZ9Q9F3z35ude-B3a6KRZvVI8",
-  authDomain: "bsms-logbook.firebaseapp.com",
-  databaseURL: "https://bsms-logbook.firebaseio.com",
-  projectId: "bsms-logbook",
-  storageBucket: "bsms-logbook.appspot.com",
-  messagingSenderId: "202139360189",
-  appId: "1:202139360189:web:31b80e0cd7c218f9e9d0d4",
-  measurementId: "G-L1VX79JXVC"
-};
-
-//firebase.initializeApp(firebaseConfig);
 
 export default function HomeScreen() {
   return (
@@ -40,28 +22,18 @@ export default function HomeScreen() {
           <Image
             source={
               __DEV__
-                ? require('../assets/images/Logo9.png')
-                : require('../assets/images/Logo9.png')
+                ? require('../assets/images/BSMS_logo_2015_WO.png')
+                : require('../assets/images/splash.png')
 
             }
             style={styles.welcomeImage}
-          />
-<Text style={styles.getStartedText}>Wecome to the BSMS Anatomy Laboratory Interface</Text>
-<Text style={styles.getStartedText}>The dissection table companion</Text>
+          />         
+<Text style={styles.getStartedText}>BSMS dress code</Text>
+<Text style={{ color: 'white', fontSize: 10, marginLeft: 20 }}>Working  in  a  clinical  environment  and  meeting  patients  will  bring  you  into  contact  with  many  different  people. The BSMS dress code has been designed to ensure:•Patients feel confident they are being seen by a team of professionals.•All  patients  and  visitors  feel  their  beliefs  are  respected.  Age  group,  ethnic  origin  and  religion  can  influence patients’ views on dress and it is important not to cause unnecessary offence or upset.•The dangers of infection are minimised.
+The Dress Code below is based on the following principles:•To reduce risk of cross-infection (e.g. improved hand hygiene);•To avoid an unintentional injury to patients (e.g. from wristwatches or jewellery);•To reduce likelihood of injury to students (e.g. assault –   neck chains);•To respect the cultural values or beliefs of patients, visitors and staff; •To promote public confidence.You  should  always  dress  smartly  when  in  a  clinical  environment  and  when  meeting  patients.    Please  note  that this includes examinations which occur in, or simulate, the clinical environment such as the OCSEs. As a general rule, men should wear a shirt with smart trousers. Please note that, due to the risk of infection, ties may need to be removed during direct contact with patients. Women should wear a blouse/smart top with trousers or a skirt or a smart dress. During clinical work, short sleeves are preferred but, if necessary, long sleeves may be rolled up neatly.The following rules must always be followed whenever working with patients:•You must wear your identification badge at all times and ensure that it can be seen.•Jewellery  should  be  kept  to  a  minimum.  Dangling  earrings  and  facial  piercing  are  not  appropriate.    You may be required to cover or remove other jewellery.•Wrist watches should not be worn when in direct physical contact with patients.•Shoes should be neat and clean with a closed toe. Comfortable footwear is important but trainers are not acceptable.•Dress must be tidy and presentable.•Hair should be tied back.•Very short skirts, low cut tops or cropped tops are unacceptable.•Your face must be fully visible for the purposes of recognition and communication with patients and staff.  Head dresses worn as part of religious observance must not cover the face.•Nail varnish and false nails should not be worn.A  visible  photo  identity  name  badge  should  be  worn  and  clearly  displayed  at  all  times.    For  students  in  direct  patient  contact  only  the  clip-on  style  should  be  worn  to  reduce  contamination.  It  is  good  infection  control practice to clean ID badges daily to remove contaminants (as with phones and pens).The GP you are working with or member of his/her staff is within their rights to ask you to leave if they do not consider your appearance to be acceptable, and this will be recorded as an absence.If you are in any doubt what you should wear in the GP’s surgery it is best to ask the doctor in charge for advice.A full and more detailed version of the BSMS Dress Code can be found in Annex D of the BMBS Student Handbook on studentcentral..</Text>
 
-
-
-
-
-
-
-<Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-       FAQ
-      </Text>
         </View>
-        <Text onPress={handlePrivacyPress} style={styles.helpLinkText2}>
-       Privacy Notice
-      </Text>
+
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
 
@@ -73,6 +45,8 @@ export default function HomeScreen() {
           </View>
 
           <Text style={styles.getStartedText}>
+
+
           </Text>
         </View>
       </ScrollView>
@@ -88,33 +62,27 @@ function DevelopmentModeNotice() {
   if (__DEV__) {
     const learnMoreButton = (
       <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        FAQ
+        Learn more
       </Text>
     );
 
     return (
       <Text style={styles.developmentModeText}>
-    
+     
       </Text>
     );
   } else {
     return (
       <Text style={styles.developmentModeText}>
-       
+        You are not in development mode: your app will run at full speed.
       </Text>
     );
   }
 }
 
 function handleLearnMorePress() {
-  //WebBrowser.openBrowserAsync({FAQScreen});
   WebBrowser.openBrowserAsync(
-  'https://ali.brighton.domains/Interface/FAQ.mjs'
-  );
-}
-function handlePrivacyPress() {
-  WebBrowser.openBrowserAsync(
-    'https://ali.brighton.domains/Interface/privacy.html'
+    'https://docs.expo.io/versions/latest/workflow/development-mode/'
   );
 }
 
@@ -127,29 +95,31 @@ function handleHelpPress() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#282828',
+    backgroundColor: '#026666',
   },
   developmentModeText: {
-    marginBottom: 20,
+    marginBottom: 10,
     color: 'rgba(0,0,0,0.4)',
     fontSize: 14,
     lineHeight: 19,
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
+    paddingTop: 10,
   },
   welcomeContainer: {
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 5,
+    marginBottom: 1,
   },
   welcomeImage: {
-    width: 450,
-    height: 350,
+    width: 290,
+    height: 160,
     resizeMode: 'contain',
-    marginTop: 30,
+    marginTop: 5,
     marginLeft: -10,
+    marginBottom: 1,
+
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -168,9 +138,10 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     fontSize: 17,
-    color: 'rgba(188,186,62, 1)',
+    color: 'rgba(255,255,255, 1)',
     lineHeight: 24,
     textAlign: 'center',
+    marginTop: 50,
   },
   tabBarInfoContainer: {
     position: 'absolute',
@@ -209,11 +180,6 @@ const styles = StyleSheet.create({
   },
   helpLinkText: {
     fontSize: 14,
-    color: '#BABABA',
-  },
-  helpLinkText2: {
-    fontSize: 12,
-    color: '#BABABA',
-    textAlign: 'center',
+    color: '#00627f',
   },
 });
